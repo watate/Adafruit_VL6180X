@@ -133,6 +133,9 @@ void Adafruit_VL6180X::loadSettings(void) {
                                 // to 500ms
     write8(0x0014, 0x24);       // Configures interrupt on 'New Sample
                                 // Ready threshold event'
+    
+    // Walter: Adjusting the gain to see if modifying the registers using writeReg works. We should see a large spike in Lux when changing gain to 40
+    write8(0x03F, 0x47); //ALS Gain = 40
 }
 
 
